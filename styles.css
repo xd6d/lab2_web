@@ -73,7 +73,6 @@ header h1 {
 
 .grid {
     display: grid;
-
     grid-template-columns: repeat(3, 220px);
     grid-template-rows: repeat(2, 220px);
     grid-gap: 22px 40px;
@@ -110,4 +109,15 @@ footer {
 .footer-list li {
     padding: 10px 2px 2px 15%;
     font-weight: normal;
+}
+
+@media (max-device-width: 800px) {
+    html {
+        /*height: auto;*/
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 220px);
+        grid-template-rows: repeat(3, 220px);
+    }
 }
