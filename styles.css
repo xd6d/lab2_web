@@ -1,0 +1,113 @@
+html {
+    background: rgba(144, 238, 144, 0.4);
+    height: 100%;
+    font-family: "Roboto Light", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100%;
+}
+
+header {
+    background-color: rgba(49, 203, 49, 0.83);
+    border-bottom: solid 2px #409d2e;
+    box-shadow: 0 2px 6px 1px #409d2e;
+}
+
+header h1 {
+    margin: 15px 1.5rem;
+    font-size: 37px;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+}
+
+.sidebar {
+    background-color: rgb(150, 248, 56);
+    width: 10%;
+    min-width: 114px;
+    border-right: solid 2px #409d2e;
+    box-shadow: 2px 0 6px 1px #409d2e;
+}
+
+.nav-list {
+    margin-top: 40px;
+    list-style-type: none;
+    padding-left: 12%;
+}
+
+.nav-list li {
+    font-size: 1.1rem;
+    align-items: flex-start;
+    padding: 1.5rem 2%;
+    font-weight: bold;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #1b1b1b;
+}
+
+.nav-list li a:hover {
+    color: #02a239;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*max-height: 500px;*/
+    /*background-color: rgba(144, 238, 144, 0.2);*/
+    /*background: linear-gradient(to top right, red -33%, green, blue 135%);*/
+    width: 90%;
+    padding: 5%;
+}
+
+.grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 220px);
+    grid-template-rows: repeat(2, 220px);
+    grid-gap: 22px 40px;
+}
+
+.grid img {
+    box-shadow: 6px 6px 10px 2px rgba(29, 124, 29, 0.7);
+    border-radius: 15px;
+    flex: 1 1 auto;
+    transition: 2s;
+}
+
+.grid img:hover {
+    transform: scale(1.12);
+}
+
+footer {
+    margin: 0;
+    background-color: rgba(0, 255, 19, 0.68);
+    border-top: solid 2px #409d2e;
+    box-shadow: inset 0 2px 6px 1px #409d2e;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-list {
+    list-style-type: none;
+    width: auto;
+    font-size: 0.9rem;
+    padding: 0 3%;
+    font-weight: bold;
+}
+
+.footer-list li {
+    padding: 10px 2px 2px 15%;
+    font-weight: normal;
+}
