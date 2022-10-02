@@ -15,12 +15,50 @@ header {
     background-color: rgba(49, 203, 49, 0.83);
     border-bottom: solid 2px #409d2e;
     box-shadow: 0 2px 6px 1px #409d2e;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: #1b1b1b;
+
+}
+
+.header-logo img {
+    max-width: 25%;
+    padding-left: 3%;
+    animation: rotateYX360 1400ms linear infinite;
+}
+
+.header-menu {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 0 1.5%;
+}
+
+.header-menu a {
+    font-size: 1.2em;
+    white-space: nowrap;
+    padding: 0 8%;
+    text-decoration: none;
+    color: #1b1b1b;
+}
+
+.header-menu a:hover {
+    color: #224f1c;
 }
 
 header h1 {
-    margin: 15px 1.5rem;
-    font-size: 37px;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+    font-size: 2.5em;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.44);
 }
 
 .container {
@@ -31,31 +69,26 @@ header h1 {
 
 .sidebar {
     background-color: rgb(150, 248, 56);
-    width: 10%;
-    min-width: 114px;
+    width: 9%;
+    min-width: 105px;
     border-right: solid 2px #409d2e;
     box-shadow: 2px 0 6px 1px #409d2e;
+    padding-left: 1%;
 }
 
-.nav-list {
-    margin-top: 40px;
-    list-style-type: none;
-    padding-left: 12%;
+.sidebar p {
+    padding: 0.5em 0;
 }
 
-.nav-list li {
-    font-size: 1.1rem;
+.sidebar a {
     align-items: flex-start;
-    padding: 1.5rem 2%;
+    font-size: 1.1rem;
     font-weight: bold;
-}
-
-.nav-list li a {
     text-decoration: none;
     color: #1b1b1b;
 }
 
-.nav-list li a:hover {
+.sidebar a:hover {
     color: #02a239;
 }
 
@@ -64,9 +97,6 @@ header h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /*max-height: 500px;*/
-    /*background-color: rgba(144, 238, 144, 0.2);*/
-    /*background: linear-gradient(to top right, red -33%, green, blue 135%);*/
     width: 90%;
     padding: 5%;
 }
@@ -81,12 +111,28 @@ header h1 {
 .grid img {
     box-shadow: 6px 6px 10px 2px rgba(29, 124, 29, 0.7);
     border-radius: 15px;
-    flex: 1 1 auto;
-    transition: 2s;
+    max-height: 100%;
+    max-width: 100%;
+    transition-property: transform;
+    transition-duration: 0.2s;
 }
 
 .grid img:hover {
     transform: scale(1.12);
+}
+
+.content table {
+    width: 80%;
+    text-align: center;
+}
+
+.content table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.content table tr:nth-child(2n) {
+    background-color: rgba(37, 103, 37, 0.18);
 }
 
 footer {
@@ -98,26 +144,98 @@ footer {
     justify-content: space-between;
 }
 
-.footer-list {
+footer ul {
     list-style-type: none;
     width: auto;
     font-size: 0.9rem;
     padding: 0 3%;
     font-weight: bold;
+    color: #1b1b1b;
 }
 
-.footer-list li {
+footer ul li {
     padding: 10px 2px 2px 15%;
     font-weight: normal;
 }
 
+footer ul li {
+    font-weight: lighter;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+footer ul li i {
+    text-transform: uppercase;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #1b1b1b;
+}
+
 @media (max-device-width: 800px) {
-    html {
-        /*height: auto;*/
+    header h1 {
+        font-size: 4em;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: auto;
+        border-right: none;
+        border-bottom: solid 2px #409d2e;
     }
 
     .grid {
-        grid-template-columns: repeat(2, 220px);
-        grid-template-rows: repeat(3, 220px);
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(3, auto);
+        width: auto;
+        height: auto;
+        grid-gap: 3vh 7vw;
+        padding: 7%;
+    }
+
+    .grid img {
+        box-shadow: 6px 6px 15px 2px rgba(29, 124, 29, 0.7);
+    }
+
+    .content table {
+        width: auto;
+        display: block;
+        height: 100px;
+        overflow-y: scroll;
+    }
+
+    .content table tbody {
+        height: 150px;
+        overflow-y: auto;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer ul {
+        font-size: 1.5rem;
+    }
+}
+
+@keyframes rotateYX360 {
+    0% {
+        transform: rotateY(0deg);
+    }
+    25% {
+        transform: rotateY(180deg);
+    }
+    50% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(360deg);
     }
 }
